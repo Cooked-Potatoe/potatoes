@@ -1,0 +1,12 @@
+{
+  "name": "potatoes",
+  "version": "1.0.0",
+  "description": "A JavaScript implementation of an algorithm about cooking potatos 😋",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Solanum tuberosum and contributors",
+  "license": "MIT"
+}
