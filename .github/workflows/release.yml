@@ -8,10 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+        - name: Download project
         - uses: actions/checkout@v2
 
-        - name: Setup project
+        - name: Setup Node
           uses: actions/setup-node@v2
+
+        - name: Build project
           run: |
             npm ci
             tsc
