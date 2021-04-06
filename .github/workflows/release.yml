@@ -22,6 +22,6 @@ jobs:
         - name: Create release
           uses: elgohr/Github-Release-Action@master
           env:
-            GITHUB_TOKEN: ${{ github.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           with:
             args: Release made by Github Action, SHA of this release ${{ github.GITHUB_SHA }}
