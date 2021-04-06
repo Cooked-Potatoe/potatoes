@@ -8,16 +8,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup project, build and create release
+        - uses: actions/checkout@v2
 
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-      - run: |
-          npm ci
-          tsc
+        - name: Setup project
+          uses: actions/setup-node@v2
+          run: |
+            npm ci
+            tsc
 
-      - uses: elgohr/Github-Release-Action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-        with:
-          args: Release made by Github Action, SHA of this release ${{ github.GITHUB_SHA }}
+        - name: Create release
+          uses: elgohr/Github-Release-Action@master
+            env:
+              GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+            with:
+              args: Release made by Github Action, SHA of this release ${{ github.GITHUB_SHA }}
